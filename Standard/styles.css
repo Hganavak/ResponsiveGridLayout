@@ -8,7 +8,7 @@
 }
 
 * {
-    border: 1px solid #cec; // For debuggin
+    border: 1px solid #cec;
 }
 
 html {
@@ -26,19 +26,28 @@ body {
     display: grid;
 }
 
+
 /* Nav nav bar containers*/
+.main-nav {
+    height: 10vh;
+}
+
 .main-nav ul {
+    height: 100%;
+    margin: 0;
     display: grid;
+    align-self: stretch;
     grid-gap: 20px;
     padding: 0;
     list-style: none;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 5fr 1fr 1fr 1fr;
 }
 
 /* Style the navbar links */
 .main-nav a {
     background: var(--primary);
     display: block;
+    height: 100%;
     text-decoration: none;
     text-align: center;
     color: var(--dark);
@@ -61,6 +70,9 @@ body {
 
 .banner {
     grid-area: banner;
+    background: url(https://source.unsplash.com/random/1000x1000);
+    background-size: cover; 
+    background-position: center;
 }
 
 .header{
@@ -72,7 +84,29 @@ body {
     grid-template-columns: 1fr;
     width: 65%;
     margin: auto;
-    min-height: 500px;
+    min-height: 800px;
+}
+
+.content-section-a, .content-section-c {
+    display: grid;
+    grid-template-areas: 'content-text content-text content-img';
+}
+
+.content-section-b {
+    display: grid;
+    grid-template-areas: 'content-img content-text content-text';
+}
+
+div[class|="content-section"] .content-text {
+    grid-area: 'content-text';
+    grid-column: span 2;
+}
+
+div[class|="content-section"] .content-img {
+    grid-area: 'content-text';
+    background: url(https://source.unsplash.com/random/300x300);
+    background-size: cover; 
+    background-position: center;
 }
 
 .footer {
