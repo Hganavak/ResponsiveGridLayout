@@ -16,20 +16,22 @@ html {
 }
 
 body {
-    background-color: #ccc;
+    background-color: rgb(248, 248, 248);
     margin: 0;
     padding: 0;
 }
 
 /* Base layout */
-.wrapper {
+eq3awrapper {
     display: grid;
 }
 
-
 /* Nav nav bar containers*/
 .main-nav {
-    height: 10vh;
+    background-color: white;
+    height: 5vh;
+    width: 65%;
+    margin: auto;
 }
 
 .main-nav ul {
@@ -103,10 +105,11 @@ div[class|="content-section"] .content-text {
 }
 
 div[class|="content-section"] .content-img {
-    grid-area: 'content-text';
+    grid-area: 'content-img';
     background: url(https://source.unsplash.com/random/300x300);
     background-size: cover; 
     background-position: center;
+    grid-column: span 1;
 }
 
 .footer {
